@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+
+  - name: Install Nginx Latest
+    apt: name=nginx state=latest
+
+  - name: Start Nginx Service
+    service:
+      name: nginx
+      state: started
