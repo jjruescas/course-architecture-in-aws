@@ -1,0 +1,14 @@
+---
+- hosts: webservers  
+  tasks:
+  - name: Install Nginx Latest
+    apt: name=nginx state=latest
+  - name: Clean artifact path
+    file:
+      state: present
+      path: "/var/www/html/index.html"  
+
+  roles:
+    - geerlingguy.docker
+
+
