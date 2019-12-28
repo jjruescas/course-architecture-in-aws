@@ -32,7 +32,7 @@ cd ~
 git clone https://github.com/jjruescas/course-architecture-in-aws
 
 cd course-architecture-in-aws/
-git checkout user-data-poc
+
 git pull
 
 echo "Executing Ansible Playbook..."
