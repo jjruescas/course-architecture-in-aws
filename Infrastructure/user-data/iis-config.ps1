@@ -58,7 +58,6 @@ git clone https://github.com/jjruescas/course-architecture-in-aws
 
 cd c:\course-architecture-in-aws
 
-git checkout user-data-poc
 git pull
 
 Write-Output "Executing Powershell DSC..."
