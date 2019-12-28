@@ -1,0 +1,7 @@
+terraform plan -var-file=".\tfvars.json"
+aws configure
+aws configure --profile course-user
+
+terraform state rm 'aws_db_instance.Postgres_DB_Instance'
+terraform apply -target aws_db_instance.Postgres_DB_Instance -var-file=".\tfvars.json"
+terraform destroy -target aws_db_instance.Postgres_DB_Instance -var-file=".\tfvars.json"

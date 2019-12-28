@@ -1,0 +1,11 @@
+server1.example.com
+server2.example.com
+
+[webservers]
+server3.example.com
+server4.example.com
+
+[databases]
+server5.example.com
+server6.example.com
+
