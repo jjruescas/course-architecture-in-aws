@@ -1,0 +1,14 @@
+{
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "YOUR-ACCESS-KEY",
+      "secret_key": "YOUR-SECRET-KEY",
+      "region": "YOUR-PREFERRED-REGION",
+      "source_ami": "AN-UBUNTU-AMI-ID-IN-YOUR-PREFERRED-REGION",
+      "ami_name": "my-ubuntu",
+      "instance_type": "t2.small",
+      "ssh_username": "ubuntu"
+    }
+  ]
+}

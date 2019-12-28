@@ -1,0 +1,35 @@
+{
+  "variables": {
+    "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+    "region": "YOUR-PREFERRED-REGION",
+    "source_ami_filter_exp": "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*",
+    "result_ami_name": "my-ubuntu"
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "region": "{{user `region`}}",
+      "source_ami_filter": {
+        "filters": {
+          "virtualization-type": "hvm",
+          "name": "{{ user `source_ami_filter_exp`}}",
+          "root-device-type": "ebs"
+        },
+        "most_recent": true,
+        "owners": "amazon"
+      },
+      "ami_name": "{{user `result_ami_name`}}-{{timestamp}}",
+      "instance_type": "t2.micro",
+      "ssh_username": "ubuntu"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "./config.sh"
+    }
+  ]
+}
