@@ -43,9 +43,6 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
   vpc_security_group_ids = [aws_security_group.instance.id]
 
-  #test
-  key_name = "APP-KEY"
-
   user_data = <<-EOF
               #!/bin/bash
               sudo amazon-linux-extras install nginx1.12 -y
